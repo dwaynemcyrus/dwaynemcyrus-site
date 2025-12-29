@@ -1,0 +1,55 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import Link from "@components/Link.astro";
+import { ENGINEER } from "@consts";
+import {
+  getDocumentsByCollection,
+  sortDocumentsByDate,
+} from "@lib/documents";
+
+const projects = sortDocumentsByDate(
+  getDocumentsByCollection("engineer/projects"),
+);
+const projectPreview = projects.slice(0, 5);
+---
+
+<Layout title={ENGINEER.TITLE} description={ENGINEER.DESCRIPTION}>
+  <Container>
+    <aside data-pagefind-ignore>
+      <div class="space-y-10">
+        <section class="space-y-3">
+          <h1 class="text-3xl font-semibold text-black dark:text-white">
+            Engineer
+          </h1>
+          <p class="max-w-2xl text-black/70 dark:text-white/70">
+            Software projects, experiments, and technical writing.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="text-lg font-semibold text-black dark:text-white">
+              Projects
+            </h2>
+            <Link href="/engineer/projects">View all</Link>
+          </div>
+          {projects.length === 0 ? (
+            <p class="text-sm text-black/60 dark:text-white/60">
+              No projects yet.
+            </p>
+          ) : (
+            <ul class="not-prose flex flex-col gap-4">
+              {projectPreview.map((doc) => (
+                <li>
+                  <ArrowCard entry={doc} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      </div>
+    </aside>
+  </Container>
+</Layout>

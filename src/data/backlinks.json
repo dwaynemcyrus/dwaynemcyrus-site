@@ -1,0 +1,58 @@
+{
+  "/library/principles/emotional-sovereignty": [
+    {
+      "title": "On Stillness and Motion",
+      "canonical": "/library/fragments/on-stillness-and-motion",
+      "excerpt": "...Motion\n\nA short fragment about balance and pace.\n\nEmotional Sovereignty returns when the body qu..."
+    },
+    {
+      "title": "The Practice of Becoming",
+      "canonical": "/library/principles/the-practice-of-becoming",
+      "excerpt": "...e of intentional growth.\n\nThis practice builds on Emotional Sovereignty and expands through An..."
+    },
+    {
+      "title": "Morning Light",
+      "canonical": "/library/fragments/morning-light",
+      "excerpt": "...the inner world has been tended to.\n\nThis is when Emotional Sovereignty is easiest to practice, ..."
+    },
+    {
+      "title": "Anchored: Building a Personal OS",
+      "canonical": "/engineer/projects/anchored",
+      "excerpt": "...time, build habits, and author content.\n\nSee also Emotional Sovereignty|the guiding principle th..."
+    },
+    {
+      "title": "The Examined Life in Practice",
+      "canonical": "/library/essays/examined-life-in-practice",
+      "excerpt": "...ons, assumptions, and patterns.\n\nThis connects to Emotional Sovereignty: you cannot examine what..."
+    }
+  ],
+  "/library/fragments/on-stillness-and-motion": [
+    {
+      "title": "Emotional Sovereignty",
+      "canonical": "/library/principles/emotional-sovereignty",
+      "excerpt": "... right now, and why?\"\n\n## Related Ideas\n\nSee also On Stillness and Motion for the balance betwee..."
+    }
+  ],
+  "/library/principles/the-practice-of-becoming": [
+    {
+      "title": "Emotional Sovereignty",
+      "canonical": "/library/principles/emotional-sovereignty",
+      "excerpt": "...rdless of external circumstances.\n\nThis builds on The Practice of Becoming.\n\n> [!note]\n> This is..."
+    },
+    {
+      "title": "Anchored: Building a Personal OS",
+      "canonical": "/engineer/projects/anchored",
+      "excerpt": "...his project practices what it preaches—built with The Practice of Becoming in mind."
+    }
+  ],
+  "/library/fragments/morning-light": [],
+  "/engineer/projects/anchored": [
+    {
+      "title": "The Practice of Becoming",
+      "canonical": "/library/principles/the-practice-of-becoming",
+      "excerpt": "... on Emotional Sovereignty and expands through Anchored|the system I built.\n\n> [!tip] Pro Tip..."
+    }
+  ],
+  "/library/essays/examined-life-in-practice": [],
+  "/artist/poetry/before-dawn": []
+}

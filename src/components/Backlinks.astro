@@ -1,0 +1,32 @@
+---
+import type { BacklinkEntry } from "@types/documents";
+
+interface Props {
+  backlinks: BacklinkEntry[];
+}
+
+const { backlinks } = Astro.props as Props;
+---
+
+{backlinks.length > 0 && (
+  <aside class="mt-12 border-t border-black/10 pt-6 text-sm dark:border-white/10">
+    <h2 class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-black/60 dark:text-white/60">
+      Linked from
+    </h2>
+    <ul class="space-y-4">
+      {backlinks.map((link) => (
+        <li class="space-y-1">
+          <a
+            href={link.canonical}
+            class="font-semibold text-black dark:text-white"
+          >
+            {link.title}
+          </a>
+          {link.excerpt && (
+            <p class="text-black/70 dark:text-white/70">{link.excerpt}</p>
+          )}
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}

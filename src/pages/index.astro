@@ -1,0 +1,102 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import Link from "@components/Link.astro";
+import { HOME, SITE } from "@consts";
+import { getRecentDocuments } from "@lib/documents";
+
+const recentDocuments = getRecentDocuments(SITE.NUM_RECENT_ON_HOMEPAGE);
+---
+
+<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
+    <aside data-pagefind-ignore>
+      <div class="space-y-16">
+        <section class="space-y-4">
+          <h1 class="text-3xl font-semibold text-black dark:text-white">
+            {SITE.TITLE}
+          </h1>
+          <p class="text-sm uppercase tracking-[0.2em] text-black/60 dark:text-white/60">
+            Engineer · Mentor · Artist
+          </p>
+          <p class="max-w-2xl text-lg text-black/80 dark:text-white/80">
+            Welcome. I build software, guide men through emotional mastery, and
+            make art. This is my digital garden — a living collection of ideas,
+            projects, and explorations.
+          </p>
+        </section>
+
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">
+              Recently updated
+            </h2>
+            <Link href="/library">Explore the library</Link>
+          </div>
+          {recentDocuments.length === 0 ? (
+            <p class="text-sm text-black/60 dark:text-white/60">
+              No updates yet.
+            </p>
+          ) : (
+            <ul class="not-prose flex flex-col gap-4">
+              {recentDocuments.map((doc) => (
+                <li>
+                  <ArrowCard entry={doc} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">Explore</h2>
+          </div>
+          <ul class="not-prose grid gap-4 md:grid-cols-2">
+            <li class="rounded-lg border border-black/15 p-4 dark:border-white/20">
+              <Link href="/library" underline={false}>
+                <div class="text-lg font-semibold text-black dark:text-white">
+                  Library
+                </div>
+              </Link>
+              <p class="text-sm text-black/70 dark:text-white/70">
+                Essays, principles, and collected fragments.
+              </p>
+            </li>
+            <li class="rounded-lg border border-black/15 p-4 dark:border-white/20">
+              <Link href="/engineer" underline={false}>
+                <div class="text-lg font-semibold text-black dark:text-white">
+                  Engineer
+                </div>
+              </Link>
+              <p class="text-sm text-black/70 dark:text-white/70">
+                Software projects and technical writing.
+              </p>
+            </li>
+            <li class="rounded-lg border border-black/15 p-4 dark:border-white/20">
+              <Link href="/mentor" underline={false}>
+                <div class="text-lg font-semibold text-black dark:text-white">
+                  Mentor
+                </div>
+              </Link>
+              <p class="text-sm text-black/70 dark:text-white/70">
+                The Voyagers program and philosophy.
+              </p>
+            </li>
+            <li class="rounded-lg border border-black/15 p-4 dark:border-white/20">
+              <Link href="/artist" underline={false}>
+                <div class="text-lg font-semibold text-black dark:text-white">
+                  Artist
+                </div>
+              </Link>
+              <p class="text-sm text-black/70 dark:text-white/70">
+                Visual work, poetry, and experiments.
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </Container>
+</Layout>

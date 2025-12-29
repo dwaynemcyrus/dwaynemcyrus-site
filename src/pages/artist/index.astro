@@ -1,0 +1,55 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import Link from "@components/Link.astro";
+import { ARTIST } from "@consts";
+import {
+  getDocumentsByCollectionPrefix,
+  sortDocumentsByDate,
+} from "@lib/documents";
+
+const work = sortDocumentsByDate(
+  getDocumentsByCollectionPrefix("artist/work"),
+);
+const workPreview = work.slice(0, 5);
+---
+
+<Layout title={ARTIST.TITLE} description={ARTIST.DESCRIPTION}>
+  <Container>
+    <aside data-pagefind-ignore>
+      <div class="space-y-10">
+        <section class="space-y-3">
+          <h1 class="text-3xl font-semibold text-black dark:text-white">
+            Artist
+          </h1>
+          <p class="max-w-2xl text-black/70 dark:text-white/70">
+            Visual work, poetry, and experiments.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="text-lg font-semibold text-black dark:text-white">
+              Work
+            </h2>
+            <Link href="/artist/work">View all</Link>
+          </div>
+          {work.length === 0 ? (
+            <p class="text-sm text-black/60 dark:text-white/60">
+              No artist work yet.
+            </p>
+          ) : (
+            <ul class="not-prose flex flex-col gap-4">
+              {workPreview.map((doc) => (
+                <li>
+                  <ArrowCard entry={doc} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      </div>
+    </aside>
+  </Container>
+</Layout>
