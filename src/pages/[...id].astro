@@ -9,7 +9,7 @@ import Giscus from "@components/Giscus.astro";
 import { getBacklinksFor, getDocumentDate, getDocuments } from "@lib/documents";
 import { renderMarkdown } from "@lib/markdown";
 import { readingTime, titleCase } from "@lib/utils";
-import type { Document } from "@types/documents";
+import type { Document } from "@models/documents";
 
 export async function getStaticPaths() {
   const documents = getDocuments();

@@ -1,5 +1,5 @@
 import { visit } from "unist-util-visit";
-import type { Root } from "mdast";
+import type { Parent, PhrasingContent, Root } from "mdast";
 
 type Options = {
   index: Map<string, string>;
@@ -12,6 +12,11 @@ export function remarkWikiLinks(options: Options) {
         return;
       }
 
+      const parentNode = parent as Parent;
+      if (!Array.isArray(parentNode.children)) {
+        return;
+      }
+
       const value = node.value;
       const wikiLinkRegex = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 
@@ -20,7 +25,7 @@ export function remarkWikiLinks(options: Options) {
       }
 
       wikiLinkRegex.lastIndex = 0;
-      const newChildren = [];
+      const newChildren: PhrasingContent[] = [];
       let lastIndex = 0;
       let match;
 
@@ -66,7 +71,11 @@ export function remarkWikiLinks(options: Options) {
       }
 
       if (newChildren.length > 0) {
-        parent.children.splice(index, 1, ...newChildren);
+        parentNode.children.splice(
+          index,
+          1,
+          ...(newChildren as Parent["children"]),
+        );
         return index + newChildren.length;
       }
     });

@@ -1,6 +1,6 @@
 import documentsRaw from "@data/documents.json";
 import backlinksRaw from "@data/backlinks.json";
-import type { BacklinkEntry, BacklinkMap, Document } from "@types/documents";
+import type { BacklinkEntry, BacklinkMap, Document } from "@models/documents";
 
 const documents = documentsRaw as Document[];
 const publicDocuments = documents.filter(
