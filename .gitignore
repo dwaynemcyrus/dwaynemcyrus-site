@@ -20,5 +20,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# generated content data
+src/data/*.json
+
 # jetbrains setting folder
 .idea/

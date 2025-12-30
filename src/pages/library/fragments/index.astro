@@ -1,44 +1,10 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
-import { LIBRARY } from "@consts";
-import {
-  getDocumentsByCollection,
-  sortDocumentsByDate,
-} from "@lib/documents";
-
-const fragments = sortDocumentsByDate(
-  getDocumentsByCollection("library/fragments"),
-);
+import ContentTypeIndex from "@components/ContentTypeIndex.astro";
 ---
 
-<Layout title="Library · Fragments" description={LIBRARY.DESCRIPTION}>
-  <Container>
-    <aside data-pagefind-ignore>
-      <div class="space-y-8">
-        <div class="space-y-2">
-          <h1 class="text-3xl font-semibold text-black dark:text-white">
-            Fragments
-          </h1>
-          <p class="max-w-2xl text-black/70 dark:text-white/70">
-            Shorter thoughts and observations.
-          </p>
-        </div>
-        {fragments.length === 0 ? (
-          <p class="text-sm text-black/60 dark:text-white/60">
-            No fragments yet.
-          </p>
-        ) : (
-          <ul class="not-prose flex flex-col gap-4">
-            {fragments.map((doc) => (
-              <li>
-                <ArrowCard entry={doc} />
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </aside>
-  </Container>
-</Layout>
+<ContentTypeIndex
+  contentType="fragments"
+  parentPath="/library"
+  parentName="Library"
+  description="Shorter thoughts and observations."
+/>

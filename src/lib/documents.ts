@@ -48,3 +48,18 @@ export function getRecentDocuments(limit: number) {
 export function getBacklinksFor(canonical: string): BacklinkEntry[] {
   return backlinks[canonical] ?? [];
 }
+
+export function getDocumentsByContentType(contentType: string) {
+  return publicDocuments.filter((doc) => doc.content_type === contentType);
+}
+
+export function getDocumentsGroupedByContentType(contentTypes: string[]) {
+  const grouped: Record<string, Document[]> = {};
+  for (const type of contentTypes) {
+    const docs = sortDocumentsByDate(getDocumentsByContentType(type));
+    if (docs.length > 0) {
+      grouped[type] = docs;
+    }
+  }
+  return grouped;
+}

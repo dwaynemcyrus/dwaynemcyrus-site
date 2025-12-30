@@ -1,0 +1,67 @@
+---
+/**
+ * Displays a group of documents for a content type.
+ * Shows heading with count, preview list, and "View all" link.
+ */
+import ArrowCard from "@components/ArrowCard.astro";
+import Link from "@components/Link.astro";
+import type { Document } from "@models/documents";
+import { titleCase } from "@lib/utils";
+
+interface Props {
+  /** The content type name (e.g., "principles") */
+  contentType: string;
+  /** Documents to display */
+  documents: Document[];
+  /** Base path for the collection (e.g., "/library") */
+  basePath: string;
+  /** Optional description for the content type */
+  description?: string;
+  /** Maximum items to show in preview (default: 5) */
+  previewLimit?: number;
+}
+
+const {
+  contentType,
+  documents,
+  basePath,
+  description,
+  previewLimit = 5,
+} = Astro.props;
+
+const preview = documents.slice(0, previewLimit);
+const hasMore = documents.length > previewLimit;
+const collectionPath = `${basePath}/${contentType}`;
+const displayName = titleCase(contentType);
+---
+
+<section class="space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-y-2">
+    <div>
+      <h2 class="text-lg font-semibold text-black dark:text-white">
+        {displayName}
+        <span class="ml-1 text-sm font-normal text-black/50 dark:text-white/50">
+          ({documents.length})
+        </span>
+      </h2>
+      {description && (
+        <p class="text-sm text-black/60 dark:text-white/60">{description}</p>
+      )}
+    </div>
+    <Link href={collectionPath}>View all →</Link>
+  </div>
+  <ul class="not-prose flex flex-col gap-4">
+    {preview.map((doc) => (
+      <li>
+        <ArrowCard entry={doc} />
+      </li>
+    ))}
+  </ul>
+  {hasMore && (
+    <div class="text-center">
+      <Link href={collectionPath} class="text-sm">
+        See all {documents.length} {displayName.toLowerCase()} →
+      </Link>
+    </div>
+  )}
+</section>

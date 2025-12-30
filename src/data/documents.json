@@ -1,6 +1,6 @@
 [
   {
-    "id": "01HQES001PRINCIPLE001",
+    "id": "01TESTMJRQ9OPYSY9WJB",
     "title": "Emotional Sovereignty",
     "slug": "emotional-sovereignty",
     "content_type": "principles",
@@ -8,12 +8,28 @@
     "visibility": "public",
     "status": "published",
     "canonical": "/library/principles/emotional-sovereignty",
-    "body_md": "# Emotional Sovereignty\n\nEmotional sovereignty is the practice of owning your internal state regardless of external circumstances.\n\nThis builds on [[The Practice of Becoming]].\n\n> [!note]\n> This is a core principle that underpins all other work.\n\n## The Foundation\n\nBefore you can lead others, you must first lead yourself. This begins with emotional awareness—the ability to notice what you're feeling without being controlled by it.\n\n## Key Practices\n\n1. **Name the emotion** before trying to change it\n2. **Create space** between stimulus and response\n3. **Choose your response** rather than react automatically\n\n> [!tip] Pro Tip\n> Start each morning by asking: \"What am I feeling right now, and why?\"\n\n## Related Ideas\n\nSee also [[On Stillness and Motion]] for the balance between action and reflection.",
-    "summary": "Core principle for emotional mastery.",
+    "body_md": "# Emotional Sovereignty\n\nEmotional sovereignty is the practice of owning your internal state regardless of external circumstances.\n\nThis builds on [[The Practice of Becoming]].\n\n> [!note]\n> This is a core principle that underpins much of the work in personal development.\n\n## Core Ideas\n\nWhen you are emotionally sovereign, you:\n- Respond rather than react\n- Choose your emotional state deliberately\n- Maintain inner peace amid chaos\n\n## Related Ideas\n\nSee also [[On Stillness]] for the balance between action and rest.\n",
+    "summary": "A foundational principle on owning your emotional state regardless of external circumstances.",
     "metadata": {},
-    "created_at": "2025-12-29T15:30:27.809473+00:00",
-    "updated_at": "2025-12-29T15:30:27.809473+00:00",
-    "published_at": "2024-01-15T00:00:00+00:00"
+    "created_at": "2024-01-15T10:00:00+00:00",
+    "updated_at": "2025-12-29T22:26:23.414193+00:00",
+    "published_at": "2024-01-15T10:00:00+00:00"
+  },
+  {
+    "id": "01TESTMJRQ9OPYUIYFXE",
+    "title": "On Stillness",
+    "slug": "on-stillness",
+    "content_type": "fragments",
+    "collection": "library/fragments",
+    "visibility": "public",
+    "status": "published",
+    "canonical": "/library/fragments/on-stillness",
+    "body_md": "# On Stillness\n\nA short fragment about balance and pace.\n\n[[Emotional Sovereignty]] returns when the body quiets and the mind follows.\n\nIn stillness, we find:\n- Clarity of thought\n- Depth of feeling\n- Space for wisdom\n\nThe world moves fast. You don't have to.\n",
+    "summary": "A short reflection on the power of stillness in a chaotic world.",
+    "metadata": {},
+    "created_at": "2024-01-14T10:00:00+00:00",
+    "updated_at": "2024-01-14T10:00:00+00:00",
+    "published_at": "2024-01-14T10:00:00+00:00"
   },
   {
     "id": "01HQES003FRAGMENT001",
@@ -32,7 +48,7 @@
     "published_at": "2024-01-14T00:00:00+00:00"
   },
   {
-    "id": "01HQES002PRINCIPLE002",
+    "id": "01TESTMJRQ9OPYU7XQ6Z",
     "title": "The Practice of Becoming",
     "slug": "the-practice-of-becoming",
     "content_type": "principles",
@@ -40,52 +56,60 @@
     "visibility": "public",
     "status": "published",
     "canonical": "/library/principles/the-practice-of-becoming",
-    "body_md": "# The Practice of Becoming\n\nBecoming is not a destination but a continuous practice of intentional growth.\n\nThis practice builds on [[Emotional Sovereignty]] and expands through [[Anchored|the system I built]].\n\n> [!tip] Pro Tip\n> Name the moment before you try to change it.\n\n## The Framework\n\nBecoming requires three elements:\n\n1. **Clarity** - knowing where you want to go\n2. **Commitment** - deciding to move toward it daily\n3. **Compassion** - accepting that the path is not linear\n\n## Daily Practice\n\nEach day, ask yourself:\n- Who am I becoming?\n- What did I learn today?\n- What will I do differently tomorrow?\n\n> [!warning]\n> Beware of mistaking motion for progress. Reflection is part of the work.",
-    "summary": "A framework for deliberate personal growth.",
+    "body_md": "# The Practice of Becoming\n\nBecoming is not a destination but a practice—a daily commitment to intentional growth.\n\nThis practice builds on [[Emotional Sovereignty]] and expands through [[Anchored|the system I built]].\n\n> [!tip] Pro Tip\n> Start small. One intentional action per day compounds into transformation.\n\n## The Framework\n\n1. **Awareness** - Notice where you are\n2. **Intention** - Decide where you want to go\n3. **Action** - Take one step today\n4. **Reflection** - Learn from the journey\n\n## Daily Practice\n\nEach morning, ask yourself: \"Who am I becoming today?\"\n",
+    "summary": "The continuous journey of intentional growth and self-development.",
     "metadata": {},
-    "created_at": "2025-12-29T15:30:27.809473+00:00",
-    "updated_at": "2025-12-29T15:30:27.809473+00:00",
-    "published_at": "2024-01-12T00:00:00+00:00"
+    "created_at": "2024-01-12T10:00:00+00:00",
+    "updated_at": "2025-12-29T22:26:23.488784+00:00",
+    "published_at": "2024-01-12T10:00:00+00:00"
   },
   {
-    "id": "01HQES004FRAGMENT002",
-    "title": "Morning Light",
-    "slug": "morning-light",
-    "content_type": "fragments",
-    "collection": "library/fragments",
-    "visibility": "public",
-    "status": "published",
-    "canonical": "/library/fragments/morning-light",
-    "body_md": "# Morning Light\n\nThe first hour shapes the day.\n\nI've learned to guard it fiercely—no email, no news, no input from the outside world until the inner world has been tended to.\n\nThis is when [[Emotional Sovereignty]] is easiest to practice, before the demands of the day erode your attention.",
-    "summary": "On protecting the first hour.",
-    "metadata": {},
-    "created_at": "2025-12-29T15:30:27.809473+00:00",
-    "updated_at": "2025-12-29T15:30:27.809473+00:00",
-    "published_at": "2024-01-10T00:00:00+00:00"
-  },
-  {
-    "id": "01HQES005PROJECT001",
-    "title": "Anchored: Building a Personal OS",
+    "id": "01TESTMJRQ9OPYNG25X2",
+    "title": "Anchored",
     "slug": "anchored",
     "content_type": "projects",
     "collection": "engineer/projects",
     "visibility": "public",
     "status": "published",
     "canonical": "/engineer/projects/anchored",
-    "body_md": "# Anchored: Building a Personal OS\n\nA product and process log for the system that supports this garden.\n\n## What is Anchored?\n\nAnchored is my personal productivity operating system—a place to manage tasks, track time, build habits, and author content.\n\nSee also [[Emotional Sovereignty|the guiding principle]] that shapes how I build.\n\n## Tech Stack\n\n- **Framework:** Next.js 14+ with App Router\n- **Styling:** Tailwind CSS + shadcn/ui\n- **Database:** Supabase (PostgreSQL)\n- **Hosting:** Vercel\n\n## Current Status\n\nPhase 1 complete: Tasks, projects, timer, habits, daily review.\n\n> [!note]\n> This project practices what it preaches—built with [[The Practice of Becoming]] in mind.",
-    "summary": "A product and process log for Anchored.",
+    "body_md": "# Anchored\n\nAnchored is my personal operating system—a suite of tools to manage time, build habits, and author content.\n\nSee also [[Emotional Sovereignty|the guiding principle]] that inspired this project.\n\n> [!warning]\n> This project is under active development. Features may change.\n\n## Tech Stack\n\n- **Frontend**: Next.js with TypeScript\n- **Backend**: Supabase (Postgres + Auth)\n- **Styling**: Tailwind CSS\n- **Hosting**: Vercel\n\n## Features\n\n- Document authoring with wiki-links\n- Habit tracking and streaks\n- Time blocking and review\n\nThis project practices what it preaches—built with [[The Practice of Becoming]] in mind.\n",
+    "summary": "A personal operating system for intentional living.",
     "metadata": {
       "stack": [
         "Next.js",
         "Supabase",
-        "Tailwind"
+        "Tailwind CSS",
+        "Vercel"
       ],
-      "live_url": "https://getanchored.app",
-      "repo_url": "https://github.com/dwaynemcyrus/anchored"
+      "live_url": "https://anchored.example.com",
+      "repo_url": "https://github.com/example/anchored"
     },
-    "created_at": "2025-12-29T15:30:27.809473+00:00",
-    "updated_at": "2025-12-29T15:30:27.809473+00:00",
-    "published_at": "2024-01-10T00:00:00+00:00"
+    "created_at": "2024-01-10T10:00:00+00:00",
+    "updated_at": "2025-12-29T22:26:23.559199+00:00",
+    "published_at": "2024-01-10T10:00:00+00:00"
+  },
+  {
+    "id": "01TESTMJRQ9OPYI079AL",
+    "title": "Morning Light",
+    "slug": "morning-light",
+    "content_type": "poetry",
+    "collection": "artist/poetry",
+    "visibility": "public",
+    "status": "published",
+    "canonical": "/artist/poetry/morning-light",
+    "body_md": "# Morning Light\n\nBefore the world wakes,\nthere is a stillness—\nnot empty, but full\nof unspoken potential.\n\nThe light creeps in\nthrough half-drawn curtains,\npainting shadows\nthat dance without music.\n\nI sit with my coffee,\nwatching the steam rise,\na small ritual\nin the temple of morning.\n\nNo notifications.\nNo demands.\nJust breath,\nand the slow bloom of day.\n",
+    "summary": "A poem about the quiet hours before dawn.",
+    "metadata": {
+      "form": "free verse",
+      "themes": [
+        "morning",
+        "stillness",
+        "ritual"
+      ]
+    },
+    "created_at": "2024-01-08T10:00:00+00:00",
+    "updated_at": "2025-12-29T22:26:23.594766+00:00",
+    "published_at": "2024-01-08T10:00:00+00:00"
   },
   {
     "id": "01HQES006ESSAY001",
@@ -102,6 +126,22 @@
     "created_at": "2025-12-29T15:30:27.809473+00:00",
     "updated_at": "2025-12-29T15:30:27.809473+00:00",
     "published_at": "2024-01-08T00:00:00+00:00"
+  },
+  {
+    "id": "01TESTMJRQ9OPY5RT3KK",
+    "title": "Broken Link Test",
+    "slug": "broken-link-test",
+    "content_type": "fragments",
+    "collection": "library/fragments",
+    "visibility": "public",
+    "status": "published",
+    "canonical": "/library/fragments/broken-link-test",
+    "body_md": "# Broken Link Test\n\nThis document tests the broken link styling.\n\nCheck out [[Non Existent Page]] to see how unresolved links appear.\n\nAlso try [[Another Missing Page|with display text]] for the aliased version.\n\nThis helps ensure the build pipeline handles missing links gracefully.\n",
+    "summary": "A test document with a broken wiki-link.",
+    "metadata": {},
+    "created_at": "2024-01-05T10:00:00+00:00",
+    "updated_at": "2024-01-05T10:00:00+00:00",
+    "published_at": "2024-01-05T10:00:00+00:00"
   },
   {
     "id": "01HQES007POETRY001",

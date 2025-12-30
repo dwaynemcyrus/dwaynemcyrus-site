@@ -1,0 +1,111 @@
+---
+/**
+ * Layout for individual article/document pages.
+ * Renders markdown with wiki-links, callouts, and backlinks.
+ */
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import TableOfContents from "@components/TableOfContents.astro";
+import Backlinks from "@components/Backlinks.astro";
+import Giscus from "@components/Giscus.astro";
+import { getDocumentDate } from "@lib/documents";
+import { renderMarkdown } from "@lib/markdown";
+import { readingTime, titleCase } from "@lib/utils";
+import { contentTypeRoutes } from "@config/routes";
+import type { Document, BacklinkEntry } from "@models/documents";
+
+interface Props {
+  /** The document to render */
+  document: Document;
+  /** Pages that link to this document */
+  backlinks: BacklinkEntry[];
+  /** Whether to show comments section */
+  showComments?: boolean;
+}
+
+const { document: doc, backlinks, showComments = true } = Astro.props;
+
+// Render markdown with wiki-links and callouts
+const { code, metadata } = await renderMarkdown(doc.body_md || "");
+
+// Get date for display
+const date = getDocumentDate(doc);
+
+// Calculate reading time
+const estimatedReading = doc.body_md ? readingTime(code) : null;
+
+// Build breadcrumbs from content_type route
+const contentTypeRoute = contentTypeRoutes[doc.content_type as keyof typeof contentTypeRoutes];
+const pathSegments = contentTypeRoute?.split("/").filter(Boolean) || doc.collection.split("/");
+
+// Build breadcrumb items: Home / Section / Content Type / [Title]
+const breadcrumbItems: { label: string; href?: string }[] = [
+  { label: "Home", href: "/" },
+];
+
+let currentPath = "";
+for (const segment of pathSegments) {
+  currentPath += `/${segment}`;
+  breadcrumbItems.push({
+    label: titleCase(segment),
+    href: currentPath,
+  });
+}
+
+// Add current page (no link)
+breadcrumbItems.push({ label: doc.title });
+---
+
+<Layout title={doc.title} description={doc.summary ?? doc.title}>
+  <Container>
+    <article>
+      <!-- Breadcrumbs -->
+      <div class="animate mb-8">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
+
+      <!-- Article Header -->
+      <header class="mb-10 space-y-3">
+        <div class="animate flex flex-wrap items-center gap-2 text-sm text-black/60 dark:text-white/60">
+          {date && (
+            <span>
+              <FormattedDate date={date} />
+            </span>
+          )}
+          {date && estimatedReading && <span aria-hidden="true">·</span>}
+          {estimatedReading && <span>{estimatedReading}</span>}
+        </div>
+        <h1 class="animate text-3xl font-semibold text-black dark:text-white">
+          {doc.title}
+        </h1>
+        {doc.summary && (
+          <p class="animate max-w-2xl text-black/70 dark:text-white/70">
+            {doc.summary}
+          </p>
+        )}
+      </header>
+
+      <!-- Table of Contents (if headings exist) -->
+      {metadata.headings.length > 0 && (
+        <TableOfContents headings={metadata.headings} />
+      )}
+
+      <!-- Article Body -->
+      <div class="animate prose prose-neutral dark:prose-invert max-w-none">
+        <Fragment set:html={code} />
+      </div>
+
+      <!-- Backlinks Section -->
+      <Backlinks backlinks={backlinks} />
+
+      <!-- Comments Section -->
+      {showComments && (
+        <div class="mt-16">
+          <Giscus />
+        </div>
+      )}
+    </article>
+  </Container>
+</Layout>

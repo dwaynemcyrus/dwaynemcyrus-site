@@ -1,54 +1,47 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
-import Link from "@components/Link.astro";
+import CollectionGroup from "@components/CollectionGroup.astro";
 import { ARTIST } from "@consts";
-import {
-  getDocumentsByCollectionPrefix,
-  sortDocumentsByDate,
-} from "@lib/documents";
+import { getDocumentsGroupedByContentType } from "@lib/documents";
+import { getContentTypesForLanding } from "@config/routes";
 
-const work = sortDocumentsByDate(
-  getDocumentsByCollectionPrefix("artist/work"),
-);
-const workPreview = work.slice(0, 5);
+const contentTypes = getContentTypesForLanding("/artist");
+const grouped = getDocumentsGroupedByContentType(contentTypes);
+
+const descriptions: Record<string, string> = {
+  poetry: "Verse and lyrical writing.",
+  artwork: "Visual work and experiments.",
+};
 ---
 
 <Layout title={ARTIST.TITLE} description={ARTIST.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <div class="space-y-10">
+      <div class="space-y-12">
         <section class="space-y-3">
           <h1 class="text-3xl font-semibold text-black dark:text-white">
             Artist
           </h1>
           <p class="max-w-2xl text-black/70 dark:text-white/70">
-            Visual work, poetry, and experiments.
+            {ARTIST.DESCRIPTION}
           </p>
         </section>
 
-        <section class="space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="text-lg font-semibold text-black dark:text-white">
-              Work
-            </h2>
-            <Link href="/artist/work">View all</Link>
-          </div>
-          {work.length === 0 ? (
-            <p class="text-sm text-black/60 dark:text-white/60">
-              No artist work yet.
-            </p>
-          ) : (
-            <ul class="not-prose flex flex-col gap-4">
-              {workPreview.map((doc) => (
-                <li>
-                  <ArrowCard entry={doc} />
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
+        {Object.keys(grouped).length === 0 ? (
+          <p class="text-sm text-black/60 dark:text-white/60">
+            No content yet.
+          </p>
+        ) : (
+          Object.entries(grouped).map(([contentType, docs]) => (
+            <CollectionGroup
+              contentType={contentType}
+              documents={docs}
+              basePath="/artist"
+              description={descriptions[contentType]}
+            />
+          ))
+        )}
       </div>
     </aside>
   </Container>

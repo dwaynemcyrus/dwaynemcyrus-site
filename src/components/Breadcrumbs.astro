@@ -1,0 +1,52 @@
+---
+/**
+ * Breadcrumbs navigation component.
+ * Displays hierarchical path with linked ancestors and unlinked current page.
+ *
+ * @example
+ * <Breadcrumbs items={[
+ *   { label: "Library", href: "/library" },
+ *   { label: "Principles", href: "/library/principles" },
+ *   { label: "Emotional Sovereignty" }
+ * ]} />
+ *
+ * Renders: Library / Principles / Emotional Sovereignty
+ */
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="text-sm">
+  <ol class="flex flex-wrap items-center gap-1.5 text-black/60 dark:text-white/60">
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      return (
+        <li class="flex items-center gap-1.5">
+          {index > 0 && (
+            <span class="text-black/30 dark:text-white/30" aria-hidden="true">/</span>
+          )}
+          {item.href && !isLast ? (
+            <a
+              href={item.href}
+              class="transition-colors duration-200 hover:text-black dark:hover:text-white"
+            >
+              {item.label}
+            </a>
+          ) : (
+            <span class={isLast ? "text-black dark:text-white" : ""}>
+              {item.label}
+            </span>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>

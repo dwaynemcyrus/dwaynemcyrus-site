@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run content:build:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run seed:*)",
+      "Bash(npx tsx:*)",
+      "Bash(__NEW_LINE__ echo -e \"\\\\n=== Callouts ===\")",
+      "Bash(__NEW_LINE__ echo -e \"\\\\n=== Backlinks section ===\")"
+    ]
+  }
+}

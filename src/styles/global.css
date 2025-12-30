@@ -148,59 +148,45 @@ pre {
   @apply scale-90 transition-transform;
 }
 
+/* Callout blocks (Obsidian-style) */
 .callout {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border-left: 4px solid;
+  @apply my-6 rounded-lg border-l-4 p-4;
 }
 
 .callout::before {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  @apply mb-2 block font-semibold capitalize;
   content: attr(data-callout-title);
-  text-transform: capitalize;
 }
 
 .callout-note {
-  background-color: #eff6ff;
-  border-color: #3b82f6;
+  @apply border-blue-500 bg-blue-50 dark:bg-blue-950/30;
 }
 
 .callout-tip {
-  background-color: #f0fdf4;
-  border-color: #22c55e;
+  @apply border-green-500 bg-green-50 dark:bg-green-950/30;
 }
 
 .callout-warning {
-  background-color: #fefce8;
-  border-color: #eab308;
+  @apply border-yellow-500 bg-yellow-50 dark:bg-yellow-950/30;
 }
 
 .callout-danger {
-  background-color: #fef2f2;
-  border-color: #ef4444;
+  @apply border-red-500 bg-red-50 dark:bg-red-950/30;
 }
 
 .callout-quote {
-  background-color: #f9fafb;
-  border-color: #9ca3af;
-  font-style: italic;
+  @apply border-gray-400 bg-gray-50 italic dark:bg-gray-800/30;
 }
 
 .callout-example {
-  background-color: #faf5ff;
-  border-color: #a855f7;
+  @apply border-purple-500 bg-purple-50 dark:bg-purple-950/30;
 }
 
+/* Wiki-link styles */
 .wiki-link {
-  text-decoration-style: dotted;
+  @apply decoration-dotted;
 }
 
 .wiki-link-broken {
-  border-bottom: 1px dashed #dc2626;
-  color: #dc2626;
-  cursor: help;
-  text-decoration: none;
+  @apply cursor-help border-b border-dashed border-red-600 text-red-600 no-underline dark:border-red-400 dark:text-red-400;
 }

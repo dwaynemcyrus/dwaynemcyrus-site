@@ -1,0 +1,68 @@
+---
+/**
+ * Reusable index page for a content type.
+ * Displays all documents of a given type with breadcrumbs and sorting.
+ */
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import { getDocumentsByContentType, sortDocumentsByDate } from "@lib/documents";
+import { titleCase } from "@lib/utils";
+
+interface Props {
+  /** The content type to display (e.g., "principles") */
+  contentType: string;
+  /** Parent section path (e.g., "/library") */
+  parentPath: string;
+  /** Parent section name (e.g., "Library") */
+  parentName: string;
+  /** Description for this content type */
+  description: string;
+}
+
+const { contentType, parentPath, parentName, description } = Astro.props;
+
+const documents = sortDocumentsByDate(getDocumentsByContentType(contentType));
+const displayName = titleCase(contentType);
+const currentPath = `${parentPath}/${contentType}`;
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: parentName, href: parentPath },
+  { label: displayName },
+];
+---
+
+<Layout title={displayName} description={description}>
+  <Container>
+    <aside data-pagefind-ignore>
+      <div class="space-y-10">
+        <Breadcrumbs items={breadcrumbs} />
+
+        <section class="space-y-3">
+          <h1 class="text-3xl font-semibold text-black dark:text-white">
+            {displayName}
+          </h1>
+          <p class="max-w-2xl text-black/70 dark:text-white/70">
+            {description}
+          </p>
+        </section>
+
+        {documents.length === 0 ? (
+          <p class="text-sm text-black/60 dark:text-white/60">
+            No content yet.
+          </p>
+        ) : (
+          <ul class="not-prose flex flex-col gap-4">
+            {documents.map((doc) => (
+              <li>
+                <ArrowCard entry={doc} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </aside>
+  </Container>
+</Layout>

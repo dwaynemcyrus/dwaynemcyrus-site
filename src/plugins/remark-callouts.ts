@@ -1,3 +1,28 @@
+/**
+ * Remark plugin for transforming Obsidian-style callout blocks into styled HTML.
+ *
+ * @example
+ * // Input markdown:
+ * > [!note]
+ * > This is a note callout with important information.
+ *
+ * // Output HTML:
+ * <div class="callout callout-note" data-callout-type="note" data-callout-title="note">
+ *   <p>This is a note callout with important information.</p>
+ * </div>
+ *
+ * @example
+ * // Input with custom title:
+ * > [!tip] Pro Tip
+ * > You can add a custom title after the type.
+ *
+ * // Output HTML:
+ * <div class="callout callout-tip" data-callout-type="tip" data-callout-title="Pro Tip">
+ *   <p>You can add a custom title after the type.</p>
+ * </div>
+ *
+ * Supported callout types: note, tip, warning, danger, quote, example
+ */
 import { visit } from "unist-util-visit";
 import type { Root } from "mdast";
 
