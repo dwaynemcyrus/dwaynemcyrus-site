@@ -48,3 +48,15 @@ export function getRecentDocuments(limit: number) {
 export function getBacklinksFor(canonical: string): BacklinkEntry[] {
   return backlinks[canonical] ?? [];
 }
+
+export function getDocumentsByContentType(contentType: string) {
+  return publicDocuments.filter((doc) => doc.content_type === contentType);
+}
+
+export function createArticlePaths(contentType: string) {
+  const docs = getDocumentsByContentType(contentType);
+  return docs.map((doc) => ({
+    params: { slug: doc.slug },
+    props: { doc },
+  }));
+}

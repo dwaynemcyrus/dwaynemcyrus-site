@@ -1,0 +1,17 @@
+---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import { createArticlePaths } from "@lib/documents";
+import type { Document } from "@models/documents";
+
+export async function getStaticPaths() {
+  return createArticlePaths("letters");
+}
+
+interface Props {
+  doc: Document;
+}
+
+const { doc } = Astro.props;
+---
+
+<ArticleLayout doc={doc} />

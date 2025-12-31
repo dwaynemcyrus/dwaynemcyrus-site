@@ -2,22 +2,64 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { NOW } from "@consts";
+
+const lastUpdated = "December 2024";
 ---
 
 <Layout title={NOW.TITLE} description={NOW.DESCRIPTION}>
   <Container>
-    <aside data-pagefind-ignore>
-      <div class="space-y-4">
-        <h1 class="text-3xl font-semibold text-black dark:text-white">
-          Now
-        </h1>
-        <p class="max-w-2xl text-black/70 dark:text-white/70">
-          A snapshot of what I'm focused on right now.
-        </p>
-        <div class="rounded-lg border border-dashed border-black/15 p-6 text-sm text-black/60 dark:border-white/20 dark:text-white/60">
-          Update this page with the current season, projects, and priorities.
-        </div>
+    <div data-pagefind-ignore class="animate">
+      <div class="space-y-10">
+        <header class="space-y-4">
+          <h1 class="text-3xl font-semibold uppercase tracking-wider text-black dark:text-white">
+            Now
+          </h1>
+          <p class="max-w-2xl text-lg text-black/70 dark:text-white/70">
+            What I'm focused on right now.
+          </p>
+          <p class="text-sm text-black/50 dark:text-white/50">
+            Last updated: {lastUpdated}
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-xl font-semibold text-black dark:text-white">
+            Currently building...
+          </h2>
+          <p class="max-w-2xl leading-relaxed text-black/80 dark:text-white/80">
+            This digital garden—a personal operating system for ideas, projects, and practices.
+            Building in public, connecting concepts through wiki-links, and letting the structure
+            emerge organically.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-xl font-semibold text-black dark:text-white">
+            Currently reading...
+          </h2>
+          <p class="max-w-2xl leading-relaxed text-black/80 dark:text-white/80">
+            Working through a mix of philosophy and technical material. The intersection of
+            how we think and how we build continues to fascinate me.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-xl font-semibold text-black dark:text-white">
+            Currently exploring...
+          </h2>
+          <p class="max-w-2xl leading-relaxed text-black/80 dark:text-white/80">
+            The relationship between stillness and motion. How rest enables depth.
+            What it means to build something that lasts versus something that scales.
+          </p>
+        </section>
+
+        <footer class="border-t border-black/10 pt-8 dark:border-white/10">
+          <p class="text-sm text-black/50 dark:text-white/50">
+            This is a <a href="https://nownownow.com/about" class="underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener noreferrer">now page</a>.
+            If you have your own site, you should make one too.
+          </p>
+        </footer>
       </div>
-    </aside>
+    </div>
   </Container>
 </Layout>
