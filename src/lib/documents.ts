@@ -21,7 +21,9 @@ export function getDocumentsByCollection(collection: string) {
 }
 
 export function getDocumentsByCollectionPrefix(prefix: string) {
-  return publicDocuments.filter((doc) => doc.collection.startsWith(prefix));
+  return publicDocuments.filter((doc) =>
+    (doc.collection ?? "").startsWith(prefix),
+  );
 }
 
 export function getDocumentDate(doc: Document) {
