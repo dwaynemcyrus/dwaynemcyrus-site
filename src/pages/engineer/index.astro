@@ -35,9 +35,28 @@ const projectPreview = projects.slice(0, 5);
             </h2>
             <Link href="/engineer/projects">View all</Link>
           </div>
-          {projects.length === 0 ? (
+
+          <p class="max-w-2xl text-lg text-black/80 dark:text-white/80">
+            View my personal OS app and login as a guest here at{" "}
+            <Link href="https://GetAnchored.app/login" external>
+              GetAnchored.app/login
+            </Link>
+            .
+            <br />
+            Explore the repo on GitHub <Link href="https://github.com/dwaynemcyrus/anchored" external>
+              here
+            </Link>.
+          </p>
+
+          <hr>
+
+          <p> A fun pizza recipe website page. The expirement was to produce everything from design to code to copy and images only using AI in a under 6 hours. I will continue to expand on this project with the history of pineapple's being a topping on pizza =).<br /> <b>Check it out here:</b> <Link href="https://no-pineapple-pizza.netlify.app/" external>
+            no-pineapple-pizza.netlify.app
+          </Link>.</p>
+
+          <!-- {projects.length === 0 ? (
             <p class="text-sm text-black/60 dark:text-white/60">
-              No projects yet.
+              More projects coming soon.
             </p>
           ) : (
             <ul class="not-prose flex flex-col gap-4">
@@ -47,7 +66,7 @@ const projectPreview = projects.slice(0, 5);
                 </li>
               ))}
             </ul>
-          )}
+          )} -->
         </section>
       </div>
     </aside>
