@@ -1,6 +1,5 @@
 ---
-import Navigation from `../components/Navigation.astro`
-import Footer from `../components/Footer.astro`
+import BaseLayout from '../layouts/BaseLayout.astro'
 import "../styles/global.css"
 
 const pageTitle = "About Me";
@@ -22,28 +21,22 @@ const skillColor = "crimson";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textCase}}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
-    </style>
-  </head>
+<BaseLayout pageTitle={pageTitle}>
 <body>
+  <style is:global define:vars={{skillColor, fontWeight, textCase}}>
+    h1 {
+      color: purple;
+      font-size: 4rem;
+    }
+    .skill {
+  color: var(--skillColor);
+  font-weight: var(--fontWeight);
+  text-transform: var(--textCase);
+}
+  </style>
 
-<Navigation />
 
-  <h1>{pageTitle}</h1>
+
   <h2>... and my new Astro site!</h2>
 
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
@@ -71,11 +64,4 @@ const textCase = "uppercase";
 
 {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
-<Footer />
-
-<script>
-import "../scripts/menu.js";
-  </script>
-
-</body>
-</html>
+</BaseLayout>
