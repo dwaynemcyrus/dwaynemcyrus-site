@@ -1,0 +1,230 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+
+
+
+- [ ] Explain the Fit-Check
+
+
+
+  4. Better Qualification
+
+  You can place reminders above the booking widget:
+  
+  This is a 15-minute diagnostic conversation.
+  
+  It is not a coaching session, strategy call, or audit.
+  
+  The purpose is to determine whether there is a fit and identify the most appropriate next step.
+
+***
+
+Important details to review before you apply.
+  > **Fit-Check Fee:** CHF 0  
+  > **No-show / late cancellation fee:** CHF 50  
+  > Cancellations or rescheduling must be made at least **48 hours before** the scheduled call. If you do not attend, or cancel/reschedule within 48 hours, you authorize a CHF 50 charge.
+
+
+<!-- ************************************************************************* -->
+
+<form
+action="https://buttondown.com/api/emails/embed-subscribe/lettersofcyrus"
+method="post"
+class="embeddable-buttondown-form"
+>
+
+<label for="recent_freeze"
+>In 1–3 sentences, describe your most recent freeze.</label
+>
+<blockquote>Freeze means the moment pressure hit and you lost access to clean action. This may look like silence, shutdown, delay, avoidance, appeasement, overthinking, emotional absence, or not saying what needed to be said.</blockquote>
+
+
+<textarea
+name="metadata__recent_freeze"
+id="recent_freeze"
+rows="5"
+cols="33"
+required></textarea>
+
+<fieldset>
+  <legend>What area is this affecting most?</legend>
+
+  <div>
+    <input
+      type="radio"
+      name="metadata__area_affected"
+      id="marriage_relationship"
+      value="marriage_relationship"
+      required
+    />
+    <label for="marriage_relationship">Marriage / Relationship</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      name="metadata__area_affected"
+      id="fatherhood"
+      value="fatherhood"
+      required
+    />
+    <label for="fatherhood">Fatherhood</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      name="metadata__area_affected"
+      id="work_mission"
+      value="work_mission"
+      required
+    />
+    <label for="work_mission">Work / Mission</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      name="metadata__area_affected"
+      id="discipline"
+      value="discipline"
+      required
+    />
+    <label for="discipline">Discipline</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      name="metadata__area_affected"
+      id="confidence"
+      value="confidence"
+      required
+    />
+    <label for="confidence">Confidence</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      name="metadata__area_affected"
+      id="decision_making"
+      value="decision_making"
+      required
+    />
+    <label for="decision_making">Decision-Making</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      name="metadata__area_affected"
+      id="other"
+      value="other"
+      required
+    />
+    <label for="other">Other</label>
+  </div>
+</fieldset>
+
+
+
+
+<legend>Confirmations</legend>
+
+<div>
+  <input
+    type="checkbox"
+    id="confirmation_call"
+    name="metadata__confirmation_call"
+    required
+  />
+  <label for="confirmation_call"
+    >I understand this is a 15-minute Fit-Check, not a coaching session or
+    full audit. The purpose is to confirm fit and identify the right next
+    step.</label
+  >
+</div>
+
+<div>
+  <input
+    type="checkbox"
+    id="confirmation_fee"
+    name="metadata__confirmation_fee"
+    required
+  />
+  <label for="confirmation_fee"
+    >I understand the Fit-Check is CHF 0 to book. If I do not attend, or
+    if I cancel/reschedule less than 48 hours before the call, I authorize
+    a CHF 50 no-show / late cancellation charge.</label
+  >
+</div>
+
+<div>
+  <input
+    type="checkbox"
+    id="confirmation_newsletter"
+    name="metadata__confirmation_newsletter"
+  />
+  <label for="confirmation_newsletter"
+    >I also want to receive the weekly emails <em>Letters from Cyrus</em>. I understand that I can unsubscribe at any time.
+  </label>
+</div>
+</fieldset>
+
+
+
+
+
+
+
+<fieldset>
+  <legend>Contact Details</legend>
+
+<label for="first_name">First Name</label>
+<input type="text" name="metadata__first_name" id="first_name" required />
+
+<label for="last_name">Last Name</label>
+<input type="text" name="metadata__last_name" id="last_name" required />
+
+
+<label for="bd-email">Enter your email</label>
+<input type="email" name="email" id="bd-email" required />
+</fieldset>
+
+<!-- Tag: Fit-Check -->
+<input
+type="hidden"
+name="tag"
+value="sub_tag_7x7cpzsmrx9chtw0ed0avs2q1v"
+/>
+
+
+<script>
+  document
+    .getElementById("confirmation_newsletter")
+    .addEventListener("change", function () {
+      const existing = document.getElementById("free-newsletter-tag");
+      if (this.checked) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "tag";
+        input.value = "sub_tag_1n2cmgt0w78w395ttfyyndcdwc";
+        input.id = "free-newsletter-tag";
+        this.closest("form").appendChild(input);
+      } else if (existing) {
+        existing.remove();
+      }
+    });
+</script>
+
+<!-- <input type="submit" value="Submit My Application" /> -->
+
+<input type="submit" value="Send The Booking Link" />
+
+</form>
+
+</BaseLayout>
