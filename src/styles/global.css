@@ -99,3 +99,8 @@ html {
       }
 
   }
+
+  /* For the booking page inparticulr on Mobile Safari */
+  input, textarea, select {
+    font-size: 16px;
+  }
