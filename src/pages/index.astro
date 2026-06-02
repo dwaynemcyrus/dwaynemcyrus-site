@@ -4,4 +4,21 @@ const pageTitle = "Home Page";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
+
+  <hr>
+
+  <form
+  action="https://buttondown.com/api/emails/embed-subscribe/lettersfromcyrus"
+  method="post"
+  class="embeddable-buttondown-form"
+>
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" />
+  <input type="submit" value="Subscribe" />
+  <p>
+    <a href="https://buttondown.com/refer/lettersfromcyrus" target="_blank">
+      Powered by Buttondown.
+    </a>
+  </p>
+</form>
 </BaseLayout>
