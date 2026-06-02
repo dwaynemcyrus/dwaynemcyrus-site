@@ -77,18 +77,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </form>
 
   <script>
-    const radios = document.querySelectorAll('input[name="metadata__gender"]');
-const tagInput = document.getElementById('bd-tag');
-
-const tagMap = {
-  man: 'sub_tag_7pzyd0fh9q8jfscxt76vkfzseg',
-  woman: 'sub_tag_44xcvqncep9mm890nrr7skdczv'
-};
-
-radios.forEach(radio => {
-  radio.addEventListener('change', () => {
-    tagInput.value = tagMap[radio.value] ?? '';
-  });
-});
-  </script>
+    document.querySelector('.embeddable-buttondown-form').addEventListener('submit', function (e) {
+      const gender = this.querySelector('input[name="metadata__gender"]:checked');
+      if (!gender) return;
+  
+      const tags = {
+        woman: 'sub_tag_44xcvqncep9mm890nrr7skdczv',
+        man: 'sub_tag_7pzyd0fh9q8jfscxt76vkfzseg'
+      };
+  
+      const hidden = document.createElement('input');
+      hidden.type = 'hidden';
+      hidden.name = 'tag';
+      hidden.value = tags[gender.value];
+      this.appendChild(hidden);
+    });
+  </script> 
 </BaseLayout>
