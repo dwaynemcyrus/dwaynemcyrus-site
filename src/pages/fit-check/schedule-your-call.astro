@@ -27,11 +27,11 @@ Cal("init", "fit-check", {origin:"https://app.cal.com"});
 
   Cal.ns["fit-check"]("inline", {
     elementOrSelector:"#my-cal-inline-fit-check",
-    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"},
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
     calLink: "dwaynemcyrus/fit-check",
   });
 
-  Cal.ns["fit-check"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["fit-check"]("ui", {"hideEventTypeDetails":true,"layout":"month_view"});
   </script>
   <!-- Cal inline embed code ends -->
 
@@ -60,7 +60,7 @@ Cal("init", "fit-check", {origin:"https://app.cal.com"});
     // data-cal-namespace="fit-check"
     // `data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'`
   
-    Cal.ns["fit-check"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
+    Cal.ns["fit-check"]("ui", {"theme":"dark","hideEventTypeDetails":true,"layout":"month_view"});
     </script>
     <!-- Cal element-click embed code ends -->
   <!-- Cal inline embed code ends -->
