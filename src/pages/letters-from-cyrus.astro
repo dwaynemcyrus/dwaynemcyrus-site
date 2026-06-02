@@ -1,75 +1,78 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
+  <p>
+    <em>Letters from Cyrus</em> is for men carrying silent weight — the pressure to
+    provide, lead, protect, endure, and stay composed while fighting battles few people
+    see.
+  </p>
 
-    <p><em>Letters from Cyrus</em> is for men carrying silent weight — the pressure to provide, lead, protect, endure, and stay composed while fighting battles few people see.</p>
+  <p>
+    These are hard-earned reflections on emotional command, righteous living,
+    family leadership, and the inner work of becoming whole, grounded, and safe
+    to stand beside.
+  </p>
 
-<p>These are hard-earned reflections on emotional command, righteous living, family leadership, and the inner work of becoming whole, grounded, and safe to stand beside.</p>
+  <p>
+    It is also for the women who love, challenge, and stand with these men — the
+    ones who want to understand the war beneath the silence without excusing
+    weakness, avoidance, or destruction.
+  </p>
 
-<p>
-    It is also for the women who love, challenge, and stand with these men — the ones who want to understand the war beneath the silence without excusing weakness, avoidance, or destruction.</p>
-    
-    <p>No empty motivation. No soft excuses. Just clear, hard-earned letters on becoming the kind of man who can carry responsibility without collapsing, hardening, or losing himself.</p>
-  
-    <form
+  <p>
+    No empty motivation. No soft excuses. Just clear, hard-earned letters on
+    becoming the kind of man who can carry responsibility without collapsing,
+    hardening, or losing himself.
+  </p>
+
+  <form
     action="https://buttondown.com/api/emails/embed-subscribe/lettersfromcyrus"
     method="post"
     class="embeddable-buttondown-form"
   >
+    <fieldset>
+      <legend>Which best describes you?</legend>
 
-  <fieldset>
-    <legend>Which best describes you?</legend>
+      <div>
+        <input
+          type="radio"
+          name="metadata__gender"
+          id="man"
+          value="man"
+          required
+        />
+        <label for="man">I am a man carrying silent weight.</label>
+      </div>
 
-    <div>
-        <input type="radio" name="metadata__gender" id="man" value="man" required />
-      <label for="man">I am a man carrying silent weight.</label>
-    </div>
+      <div>
+        <input
+          type="radio"
+          name="metadata__gender"
+          id="woman"
+          value="woman"
+          required
+        />
+        <label for="woman"
+          >I am a woman standing with men who carry silent weight.</label
+        >
+      </div>
+    </fieldset>
 
-    <div>
-        <input type="radio" name="metadata__gender" id="woman" value="woman" required />
-      <label for="woman">I am a woman standing with men who carry silent weight.</label>
-    </div>
-</fieldset>
+    <fieldset>
+      <legend>Contact Details</legend>
 
-<fieldset>
-    <legend>Contact Details</legend>
+      <label for="first_name">First Name</label>
+      <input type="text" name="metadata__first_name" id="first_name" required />
 
-  <label for="first_name">First Name</label>
-  <input type="text" name="metadata__first_name" id="first_name" required />
+      <label for="last_name">Last Name</label>
+      <input type="text" name="metadata__last_name" id="last_name" required />
 
-  <label for="last_name">Last Name</label>
-  <input type="text" name="metadata__last_name" id="last_name" required />
+      <label for="bd-email">Enter your email</label>
+      <input type="email" name="email" id="bd-email" required />
+    </fieldset>
 
-
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" required />
-</fieldset>
-
-<!-- Tag: Free Tier -->
-<input type="hidden" name="tag" value="sub_tag_1n2cmgt0w78w395ttfyyndcdwc" />
-
-<input type="submit" value="Subscribe me to the Letters" />
-
+    <input type="submit" value="Subscribe me to the Letters" />
   </form>
-
-  <script>
-    document.querySelector('.embeddable-buttondown-form').addEventListener('submit', function (e) {
-      const gender = this.querySelector('input[name="metadata__gender"]:checked');
-      if (!gender) return;
-  
-      const tags = {
-        woman: 'sub_tag_44xcvqncep9mm890nrr7skdczv',
-        man: 'sub_tag_7pzyd0fh9q8jfscxt76vkfzseg'
-      };
-  
-      const hidden = document.createElement('input');
-      hidden.type = 'hidden';
-      hidden.name = 'tag';
-      hidden.value = tags[gender.value];
-      this.appendChild(hidden);
-    });
-  </script>
-
 </BaseLayout>
