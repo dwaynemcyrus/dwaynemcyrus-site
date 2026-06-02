@@ -75,4 +75,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <input type="submit" value="Subscribe me to the Letters" />
   </form>
+
+  <script>
+    const radios = document.querySelectorAll('input[name="metadata__gender"]');
+const tagInput = document.getElementById('bd-tag');
+
+const tagMap = {
+  man: 'sub_tag_7pzyd0fh9q8jfscxt76vkfzseg',
+  woman: 'sub_tag_44xcvqncep9mm890nrr7skdczv'
+};
+
+radios.forEach(radio => {
+  radio.addEventListener('change', () => {
+    tagInput.value = tagMap[radio.value] ?? '';
+  });
+});
+  </script>
 </BaseLayout>
